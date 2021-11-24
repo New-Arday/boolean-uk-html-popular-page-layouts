@@ -1,0 +1,34 @@
+* {
+  /* margin: 0; */
+}
+:root {
+  --bor: 2px solid grey;
+}
+.linkedin-layout {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "header" 50px
+    "body" 1fr /
+    1fr;
+}
+.header {
+  grid-area: header;
+  border: var(--bor);
+}
+
+.body {
+  grid-area: body;
+  background-color: gainsboro;
+}
+@media screen and (max-width: 975px) {
+  .header {
+    grid-area: header;
+    border: none;
+    background-color: black;
+  }
+  .body {
+    grid-area: body;
+    background-color: blue;
+  }
+}

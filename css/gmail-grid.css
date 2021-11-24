@@ -1,0 +1,48 @@
+* {
+  /* margin: 0; */
+}
+:root {
+  --bg-color: aliceblue;
+}
+:root {
+  --border: 2px solid grey;
+}
+.gmail-layout {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    "header         header      header" 50px
+    "left-s         main        vsml-r-s" 1fr /
+    1fr 2fr 50px;
+}
+.heading {
+  grid-area: header;
+  border: var(--border);
+}
+.left-side {
+  grid-area: left-s;
+  border: var(--border);
+}
+.body {
+  grid-area: main;
+  border: var(--border);
+}
+.vsmall-right-side {
+  grid-area: vsml-r-s;
+  border: var(--border);
+}
+
+@media screen and (max-width: 500px) {
+  .body {
+    grid-area: main;
+    background-color: orangered;
+    border: none;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .heading {
+    grid-area: header;
+    background-color: yellow;
+    border: dashed black 20px;
+  }
+}

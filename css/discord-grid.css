@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+}
+:root {
+  --right-hder-and-right-side-clr: rgb(247, 244, 244);
+}
+
+:root {
+  --left-hder-mid-and-ftr-clr: rgb(212, 206, 206);
+}
+:root {
+  --left-side-clr: rgb(214, 214, 233);
+}
+
+.discord-layout {
+  height: 100vh;
+  display: grid;
+  gap: 2px;
+  grid-template:
+    "left-side  header-middle header-right" 50px
+    "left-side  middle main-right" 1fr
+    "left-side  footer-middle main-right" 50px /
+    100px 300px 1fr;
+}
+
+.header-left {
+  grid-area: header-middle;
+  background-color: var(--left-hder-mid-and-ftr-clr);
+}
+
+.header-right {
+  grid-area: header-right;
+  background-color: var(--right-hder-and-right-side-clr);
+}
+
+.left-side {
+  grid-area: left-side;
+  background-color: var(--left-side-clr);
+}
+
+.middle-sec {
+  grid-area: middle;
+  background-color: var(--left-hder-mid-and-ftr-clr);
+}
+
+.right-sec {
+  grid-area: main-right;
+  background-color: var(--right-hder-and-right-side-clr);
+}
+
+.footer-sec {
+  grid-area: footer-middle;
+  background-color: var(--left-hder-mid-and-ftr-clr);
+}
+@media screen and (max-width: 1200px) {
+  .right-sec {
+    grid-area: main-right;
+    background-color: black;
+  }
+  .left-side {
+    grid-area: left-side;
+    background-color: brown;
+  }
+}
+@media screen and (max-width: 600px) {
+  .right-sec {
+    grid-area: main-right;
+    border: dotted red 5px;
+    background-color: yellow;
+  }
+  .left-side {
+    grid-area: left-side;
+    border: dotted black 5px;
+    background-color: yellow;
+  }
+}
